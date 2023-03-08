@@ -11,11 +11,11 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class SeccionesService {
+public class SeccionService {
 
     SeccionesRepository seccionesRepository;
 
-    public SeccionesService(SeccionesRepository seccionesRepository) {
+    public SeccionService(SeccionesRepository seccionesRepository) {
         this.seccionesRepository = seccionesRepository;
     }
 

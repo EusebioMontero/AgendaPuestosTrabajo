@@ -11,11 +11,11 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ZonasService {
+public class ZonaService {
 
     ZonasRepository zonasRepository;
 
-    public ZonasService(ZonasRepository zonasRepository) {
+    public ZonaService(ZonasRepository zonasRepository) {
         this.zonasRepository = zonasRepository;
     }
 

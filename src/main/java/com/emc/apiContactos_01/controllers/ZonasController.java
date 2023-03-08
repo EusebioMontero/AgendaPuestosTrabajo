@@ -1,7 +1,7 @@
 package com.emc.apiContactos_01.controllers;
 
 import com.emc.apiContactos_01.entities.Zona;
-import com.emc.apiContactos_01.services.ZonasService;
+import com.emc.apiContactos_01.services.ZonaService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -11,39 +11,39 @@ import java.util.List;
 @RestController
 public class ZonasController {
 
-    ZonasService zonasService;
+    ZonaService zonaService;
 
-    public ZonasController(ZonasService zonasService) {
-        this.zonasService = zonasService;
+    public ZonasController(ZonaService zonaService) {
+        this.zonaService = zonaService;
     }
 
     @PreAuthorize("hasAuthority('ROLE_USER')")
     @GetMapping("/api/zonas")
     public List<Zona> findAll() {
-        return zonasService.findAll();
+        return zonaService.findAll();
     }
 
     @PreAuthorize("hasAuthority('ROLE_USER')")
     @GetMapping("/api/zona/{id}")
     public ResponseEntity<Zona> find(@PathVariable Long id) {
-        return zonasService.findById(id);
+        return zonaService.findById(id);
     }
 
     @PreAuthorize("hasAuthority('ROLE_USER')")
     @PostMapping("api/zona")
     public ResponseEntity<Zona> create(@RequestBody Zona zona) {
-        return zonasService.create(zona);
+        return zonaService.create(zona);
     }
 
     @PreAuthorize("hasAuthority('ROLE_USER')")
     @PutMapping("/api/zona")
     public ResponseEntity<Zona> update(@RequestBody Zona zona) {
-        return zonasService.update(zona);
+        return zonaService.update(zona);
     }
 
     @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     @DeleteMapping("api/zona/{id}")
     public ResponseEntity<String> delete(@PathVariable Long id) {
-        return zonasService.delete(id);
+        return zonaService.delete(id);
     }
 }

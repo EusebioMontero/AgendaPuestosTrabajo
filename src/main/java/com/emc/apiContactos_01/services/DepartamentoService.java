@@ -10,10 +10,10 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 @Service
-public class DepartamentosService {
+public class DepartamentoService {
     DepartamentosRepository departamentosRepository;
 
-    public DepartamentosService(DepartamentosRepository departamentosRepository) {
+    public DepartamentoService(DepartamentosRepository departamentosRepository) {
         this.departamentosRepository = departamentosRepository;
     }
 
